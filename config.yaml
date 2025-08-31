@@ -1,0 +1,39 @@
+# Screen Translator Configuration
+# 屏幕翻译器配置文件
+
+translator:
+  # google, baidu, local, no
+  type: "no"
+  baidu:
+    baidu_app_id: ""
+    baidu_secret_key: ""
+  local:
+    model: "Helsinki-NLP/opus-mt-en-zh"
+
+
+# 截图设置
+capture_interval: 2.0        # 截图间隔（秒）
+capture_region: null         # 截图区域 [x, y, width, height]，null表示全屏
+
+# OCR设置
+ocr_language: "ch"           # OCR语言：ch(中文), en(英文), ja(日文), ko(韩文)
+min_confidence: 0.5          # 最小置信度 (0.0-1.0)
+min_text_size: 10            # 最小文字大小
+min_text_length: 2           # 最小文字长度
+
+# 翻译设置
+source_languages:
+  - "en"                     # 英文
+target_language: "ch"
+translation_cache_enabled: true  # 启用翻译缓存
+
+# 显示设置
+show_original: true          # 显示原文
+display_duration: 5000       # 显示持续时间（毫秒）
+font_size: 12                # 字体大小
+background_opacity: 180      # 背景透明度 (0-255)
+
+
+# 性能设置
+max_concurrent_translations: 5   # 最大并发翻译数
+enable_gpu_acceleration: false   # 启用GPU加速
